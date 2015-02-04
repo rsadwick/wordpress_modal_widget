@@ -10,7 +10,7 @@
   License: GPL V3
  */
 
-class Testimonials
+class Modal
 {
     private static $instance = null;
     private $plugin_path;
@@ -126,4 +126,4 @@ class Testimonials
     }
 }
 
-Testimonials::get_instance();
+Modal::get_instance();

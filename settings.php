@@ -2,9 +2,6 @@
 if (!class_exists('Modal_Template_Settings')) {
     class Modal_Template_Settings
     {
-        /**
-         * Construct the plugin object
-         */
         public function __construct()
         {
             // register actions
@@ -29,7 +26,7 @@ if (!class_exists('Modal_Template_Settings')) {
                 'wp_plugin_template'
             );
 
-            // add your setting's fields
+            // setting fields
             add_settings_field(
                 'wp_plugin_template-setting_a',
                 'Setting A',
@@ -55,7 +52,7 @@ if (!class_exists('Modal_Template_Settings')) {
         public function settings_section_wp_plugin_template()
         {
             // Think of this as help text for the section.
-            echo 'These settings do things for the WP Plugin Template.';
+            echo 'Settings for GFC Modals.';
         }
 
         /**

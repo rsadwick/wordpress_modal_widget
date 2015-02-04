@@ -2,7 +2,6 @@
 
 class Modal_Widget extends WP_Widget
 {
-
     protected $widget_slug = 'Modal_Widget';
 
     public function __construct()
@@ -185,9 +184,7 @@ class Modal_Widget extends WP_Widget
 		wp_enqueue_script($this->get_widget_slug() . '-script-app', plugins_url('js/gfc/app.js', __FILE__), array('jquery'), 1.0, true);
 		wp_enqueue_script($this->get_widget_slug() . '-script-init', plugins_url('js/gfc/init.js', __FILE__), array('jquery'), 1.0, true);
 		wp_enqueue_script($this->get_widget_slug() . '-script-modal', plugins_url('js/gfc/modal.js', __FILE__), array('jquery'), 1.0, true);
-
     }
-
 }
 
 

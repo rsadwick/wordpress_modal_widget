@@ -1,3 +1,3 @@
 # Modal Widget for Wordpress
 
-Under development
+A modal widget for Wordpress developed by Grace Family Church
