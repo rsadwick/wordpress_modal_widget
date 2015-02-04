@@ -9,14 +9,14 @@
             var modalTimeout;
             var self;
 
-            scope.overlay = $('<div/>').attr('class', 'overlay');
+            scope.overlay = $('<div/>').attr('class', 'gfc-overlay');
             
             if(config.settings.background){
             	var bgColor = scope.HexToRGBA(config.settings.background, config.settings.opacity);
             	scope.overlay.css('backgroundColor', bgColor);
             }
             
-            scope.modal = $('<div/>').attr('class', 'modal');
+            scope.modal = $('<div/>').attr('class', 'gfc-modal');
             scope.overlay.append(scope.modal);
             scope.overlay.find(scope.modal).append(scope.content);
 

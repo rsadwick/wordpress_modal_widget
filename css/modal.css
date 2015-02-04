@@ -2,7 +2,7 @@
 	display: none;
 }
 
-.overlay {
+.gfc-overlay {
     background: rgba(200, 54, 54, 0.9); 
     height: 100%;
     opacity: 1;
@@ -14,7 +14,7 @@
     overflow-y: auto;
 }
 
-.modal {
+.gfc-modal {
     background: white;
     border-radius: 5px;
     box-shadow: 0 1px 2px #666;
