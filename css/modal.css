@@ -1,0 +1,36 @@
+.overlay {
+    background: #333;
+    height: 100%;
+    opacity: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.modal {
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px #666;
+    left: 33%;
+    padding: 2%;
+    position: absolute;
+    top: 23%;
+    width: 33%;
+    overflow-y:auto;
+}
+
+.gfc-prayer-request_wrapper{
+    display: none;
+}
+
+.gfc-volunteer-request_wrapper
+{
+    display: none;
+}
+
+.gfc-contact-request_wrapper{
+    display: none;
+}
