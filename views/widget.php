@@ -1,9 +1,1 @@
-<!-- frontend. -->
-<p>Welcome to the testimonials plugger</p>
-<?php
-
-
-//restore
-wp_reset_postdata();
-
-?>
+<div id="gfc-modal" data-background="<?php if ( ! empty( $instance['title'] )) {echo $instance['title'];}?>" data-opacity="<?php if ( ! empty( $instance['opacity'] )) {echo $instance['opacity'];}?>"></div>

@@ -89,6 +89,7 @@ class Modal_Widget extends WP_Widget
 
         $instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        $instance['opacity'] = ( ! empty( $new_instance['opacity'] ) ) ? strip_tags( $new_instance['opacity'] ) : '';
 
         return $instance;
 
@@ -170,7 +171,7 @@ class Modal_Widget extends WP_Widget
     {
 
         wp_enqueue_style($this->get_widget_slug() . '-widget-styles', plugins_url('css/widget.css', __FILE__));
-		wp_enqueue_style($this->get_widget_slug() . '-widget-styles', plugins_url('css/modal.css', __FILE__));
+		wp_enqueue_style($this->get_widget_slug() . '-widget-styles-modal', plugins_url('css/modal.css', __FILE__));
     }
 
     /**
@@ -180,10 +181,10 @@ class Modal_Widget extends WP_Widget
     {
 
         wp_enqueue_script($this->get_widget_slug() . '-script', plugins_url('js/widget.js', __FILE__), array('jquery'), 1.0, true);
-		wp_enqueue_script($this->get_widget_slug() . '-script', plugins_url('js/gfc/GFC.js', __FILE__), array('jquery'), 1.0, true);
-		wp_enqueue_script($this->get_widget_slug() . '-script', plugins_url('js/gfc/app.js', __FILE__), array('jquery'), 1.0, true);
-		wp_enqueue_script($this->get_widget_slug() . '-script', plugins_url('js/gfc/init.js', __FILE__), array('jquery'), 1.0, true);
-		wp_enqueue_script($this->get_widget_slug() . '-script', plugins_url('js/gfc/modal.js', __FILE__), array('jquery'), 1.0, true);
+		wp_enqueue_script($this->get_widget_slug() . '-script-gfc', plugins_url('js/gfc/GFC.js', __FILE__), array('jquery'), 1.0, true);
+		wp_enqueue_script($this->get_widget_slug() . '-script-app', plugins_url('js/gfc/app.js', __FILE__), array('jquery'), 1.0, true);
+		wp_enqueue_script($this->get_widget_slug() . '-script-init', plugins_url('js/gfc/init.js', __FILE__), array('jquery'), 1.0, true);
+		wp_enqueue_script($this->get_widget_slug() . '-script-modal', plugins_url('js/gfc/modal.js', __FILE__), array('jquery'), 1.0, true);
 
     }
 

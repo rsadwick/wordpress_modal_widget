@@ -2,7 +2,7 @@
 
 /*
   Plugin Name: GFC Modal Widget
-  Plugin URI: https://github.com/rsadwick/
+  Plugin URI: https://github.com/rsadwick/wordpress_modal_widget
   Description: Modal plugin/widget
   Version: 1.0.0
   Author: Ryan Sadwick

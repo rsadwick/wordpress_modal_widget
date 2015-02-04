@@ -1,5 +1,6 @@
 (function ($) {
-
+	
+	var modalSettings = jQuery('body').find('#gfc-modal').data();
     jQuery(document).ready(function () {
 
         //todo: come up with a trigger Events class and use ON/OFF for observing
@@ -9,10 +10,12 @@
          }
          );*/
     });
-
+	
     //todo: check dom for form modals
     jQuery('body').on('click', ".gfc-form-modal", function (e) {
-        GFC.Instance().GetModal({content: $(this).data('type')}).Show();
+        GFC.Instance().GetModal({content: $(this).data('type'),
+        						 settings: modalSettings }
+        						 ).Show();
         return false;
     });
 

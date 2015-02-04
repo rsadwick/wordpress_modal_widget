@@ -5,10 +5,17 @@
         function Modal(config) {
             var scope = this;
             scope.content = $('.' + config.content + '_wrapper');
+            scope.settings = config.settings;
             var modalTimeout;
             var self;
 
             scope.overlay = $('<div/>').attr('class', 'overlay');
+            
+            if(config.settings.background){
+            	var bgColor = scope.HexToRGBA(config.settings.background, config.settings.opacity);
+            	scope.overlay.css('backgroundColor', bgColor);
+            }
+            
             scope.modal = $('<div/>').attr('class', 'modal');
             scope.overlay.append(scope.modal);
             scope.overlay.find(scope.modal).append(scope.content);
@@ -34,6 +41,12 @@
                 modalTimeout = setTimeout((function(){
                     scope.Reset(scope);
                 }), 1000);
+            });
+            
+            $(document).keyup(function(e) {
+            	if(e.keyCode == 27){
+            		scope.Hide();
+            	}
             });
 
             //set the modal to this instance
@@ -61,7 +74,7 @@
         };
 
         Modal.prototype.SetModal = function (modal) {
-            this.Canvas = modal
+            this.Canvas = modal;
         };
 
         Modal.prototype.Reset = function(_scope){
@@ -72,6 +85,14 @@
             _scope.overlay.append(_scope.modal);
             _scope.overlay.find(_scope.modal).append(_scope.content);
             window.clearTimeout(_scope.modalTimeout);
+        };
+        
+        Modal.prototype.HexToRGBA = function(hex, alpha){
+        	var rgbaCol = 'rgba(' + parseInt(hex.slice(-6,-4),16)
+			    + ',' + parseInt(hex.slice(-4,-2),16)
+			    + ',' + parseInt(hex.slice(-2),16)
+			    +',' + alpha + ')';
+			return rgbaCol;
         };
 
         return Modal;
