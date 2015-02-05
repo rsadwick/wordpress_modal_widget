@@ -37,10 +37,9 @@
 
             $(document).on("gform_confirmation_loaded", function(e, form_id, current_page){
                 //When confirmation is loaded, the modal times out and removes the confirm message and adds back in the original form
-                self = this;
                 modalTimeout = setTimeout((function(){
                     scope.Reset(scope);
-                }), 1000);
+                }), 2000);
             });
             
             $(document).keyup(function(e) {
@@ -57,7 +56,7 @@
 
         Modal.prototype.Show = function () {
             this.GetModal().show();
-            this.content.show();
+            this.content.toggleClass('show');
             this.content.find('.gform_ajax_spinner').hide();
         };
 

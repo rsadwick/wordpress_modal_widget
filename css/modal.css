@@ -62,15 +62,24 @@
     to   { opacity: 1; }
 }
 
+
 .gfc-prayer-request_wrapper{
-    display: none;
+    display: none !important;
+}
+
+.gfc-prayer-request_wrapper.show{
+    display: block !important;
 }
 
 .gfc-volunteer-request_wrapper
 {
-    display: none;
+    display: none !important;
 }
 
 .gfc-contact-request_wrapper{
-    display: none;
+    display: none !important;
+}
+
+.gfc-contact-request_wrapper.show{
+    display: block !important;
 }

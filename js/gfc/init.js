@@ -1,16 +1,7 @@
 (function ($) {
 	
-	var modalSettings = jQuery('body').find('#gfc-modal').data();
-    jQuery(document).ready(function () {
-
-        //todo: come up with a trigger Events class and use ON/OFF for observing
-        /* GFC.Instance().Events.On(GFC.App.EVENT.SOME_EVENT_HAPPENED,
-         function () {
-         //something here
-         }
-         );*/
-    });
-	
+	var modalSettings;
+   
     //todo: check dom for form modals
     jQuery('body').on('click', ".gfc-form-modal", function (e) {
         GFC.Instance().GetModal({content: $(this).data('type'),
@@ -27,7 +18,8 @@
 
     //all init stuff goes in here
     jQuery(document).ready(function () {
-        //GFC.Instance().GetModal({content: '<p>Test this modal!</p>'}).Show()
+         modalSettings = jQuery('body').find('#gfc-modal').data();
+         $('.gfc-contact-request_wrapper').hide();
     });
 
 })(jQuery);
