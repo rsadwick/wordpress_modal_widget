@@ -83,3 +83,11 @@
 .gfc-contact-request_wrapper.show{
     display: block !important;
 }
+
+.gfc-first-step_wrapper{
+    display: none !important;
+}
+
+.gfc-first-step_wrapper.show{
+    display: block !important;
+}
