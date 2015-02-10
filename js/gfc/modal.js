@@ -6,6 +6,8 @@
             var scope = this;
             scope.content = $('.' + config.content + '_wrapper');
             scope.settings = config.settings;
+            scope.clonedForm;
+            scope.backUp;
             var modalTimeout;
             var self;
 
@@ -18,7 +20,11 @@
             
             scope.modal = $('<div/>').attr('class', 'gfc-modal');
             scope.overlay.append(scope.modal);
-            scope.overlay.find(scope.modal).append(scope.content);
+            scope.clonedForm = scope.content.clone(true);
+            //change original form:
+            scope.backUp = scope.content.html();
+            //scope.content.remove();
+            scope.overlay.find(scope.modal).append(scope.clonedForm);
 
             //events
             scope.overlay.on("click", function () {
@@ -50,14 +56,15 @@
 
             //set the modal to this instance
             this.SetModal(scope.overlay);
+            this.Show();
         }
 
         Modal.prototype.Canvas = null;
 
         Modal.prototype.Show = function () {
             this.GetModal().show();
-            this.content.toggleClass('show');
-            this.content.find('.gform_ajax_spinner').hide();
+            this.clonedForm.toggleClass('show');
+            this.clonedForm.find('.gform_ajax_spinner').hide();
         };
 
         Modal.prototype.Hide = function () {
@@ -65,7 +72,9 @@
             if (!scope.Canvas.is(':visible')) {
                 return;
             }
-            scope.GetModal().hide();
+            scope.modal.html('');
+            scope.overlay.hide();
+           // scope.GetModal().hide();
         };
 
         Modal.prototype.GetModal = function () {
@@ -82,7 +91,7 @@
             _scope.GetModal().find(_scope.modal).html("");
 
             _scope.overlay.append(_scope.modal);
-            _scope.overlay.find(_scope.modal).append(_scope.content);
+            _scope.overlay.find(_scope.modal).append(_scope.clonedForm);
             window.clearTimeout(_scope.modalTimeout);
         };
         

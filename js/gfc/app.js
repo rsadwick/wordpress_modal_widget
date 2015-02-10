@@ -32,13 +32,10 @@
         },
 
         GetModal: function (config) {
-             if (null == this._modal) {
-                this._modal = new GFC.Modal(config);
-                this.Canvas.append(this._modal.Canvas);
-             }
-            else{
-                 this._modal.Show();
-             }
+             
+            this._modal = new GFC.Modal(config);
+            this.Canvas.append(this._modal.Canvas);
+      
 
             return this._modal;
         }

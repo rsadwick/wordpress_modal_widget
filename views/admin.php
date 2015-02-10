@@ -9,6 +9,7 @@
           <label for="<?php echo $this -> get_field_id('title'); ?>"><?php _e('Background:'); ?></label> 
           
           <select name="colorpicker">
+              <option value="#252525">GFC Gray</option>
               <option value="#7bd148">Green</option>
               <option value="#5484ed">Bold blue</option>
               <option value="#a4bdfc">Blue</option>
@@ -35,8 +36,9 @@
 <script>
 	jQuery( document ).ready(function() {
   		
-  		var colorpicker = jQuery('select[name="colorpicker"]');
-  		var colorvalue =  jQuery('.modal-color-box');
+  		//using eq because WP creates duplicates!  Why?  No idea.
+  		var colorpicker = jQuery('select[name="colorpicker"]').eq(1);
+  		var colorvalue =  jQuery('.modal-color-box').eq(1);
   		
   		colorpicker.simplecolorpicker({
   			

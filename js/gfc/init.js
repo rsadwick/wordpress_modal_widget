@@ -4,9 +4,7 @@
    
     //todo: check dom for form modals
     jQuery('body').on('click', ".gfc-form-modal", function (e) {
-        GFC.Instance().GetModal({content: $(this).data('type'),
-        						 settings: modalSettings }
-        						 ).Show();
+        GFC.Instance().GetModal({content: $(this).data('type'), settings: modalSettings });
         return false;
     });
 
@@ -19,7 +17,7 @@
     //all init stuff goes in here
     jQuery(document).ready(function () {
          modalSettings = jQuery('body').find('#gfc-modal').data();
-         $('.gfc-contact-request_wrapper').hide();
+         
     });
 
 })(jQuery);
