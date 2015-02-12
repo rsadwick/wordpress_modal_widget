@@ -14,24 +14,39 @@
     overflow-y: auto;
 }
 
+
+
+
 .gfc-modal {
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 1px 2px #666;
-    left: 25%;
-    padding: 2%;
-    position: absolute;
-    top: 15%;
-    width: 50%;
-    overflow-y:auto;
-    
-    
-    -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
-       -moz-animation: fadein 1s; /* Firefox < 16 */
-        -ms-animation: fadein 1s; /* Internet Explorer */
-         -o-animation: fadein 1s; /* Opera < 12.1 */
-            animation: fadein 1s;
+	left: 50%;
+    top: 50%;
+    width: 40%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	border-radius: 5px;
+	box-shadow: 0 1px 2px #666;   
+	padding: 2%;
+	overflow-y:auto;
+	background: white;
+	
+	-webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+		-moz-animation: fadein 1s; /* Firefox < 16 */
+			-ms-animation: fadein 1s; /* Internet Explorer */
+				-o-animation: fadein 1s; /* Opera < 12.1 */
+					animation: fadein 1s;
 }
+
+/* Smartphones (landscape) ----------- */
+@media screen and (max-width:480px){
+	.gfc-modal {
+	    left: 50%;
+	    top: 50%;
+	    width: 90%;
+	  }
+}
+
+
+
 
 @keyframes fadein {
     from { opacity: 0; }

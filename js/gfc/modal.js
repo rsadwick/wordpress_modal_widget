@@ -6,7 +6,6 @@
             var scope = this;
             scope.content = $('.' + config.content + '_wrapper');
             scope.settings = config.settings;
-            scope.clonedForm;
             scope.backUp;
             var modalTimeout;
             var self;
@@ -20,11 +19,9 @@
             
             scope.modal = $('<div/>').attr('class', 'gfc-modal');
             scope.overlay.append(scope.modal);
-           // scope.clonedForm = scope.content.clone(true);
-            //change original form:
+
+            //keep a backup of the original form so we can bring it back when closed or submitted:
             scope.backUp = scope.OuterHtml(scope.content);
-            console.log(scope.backUp);
-            //scope.content.remove();
             scope.overlay.find(scope.modal).append(scope.content);
 
             //events
@@ -44,6 +41,7 @@
 
             $(document).on("gform_confirmation_loaded", function(e, form_id, current_page){
                 //When confirmation is loaded, the modal times out and removes the confirm message and adds back in the original form
+                scope.overlay.off("click");
                 modalTimeout = setTimeout((function(){
                     scope.Reset(scope);
                 }), 2000);
@@ -85,13 +83,15 @@
         };
 
         Modal.prototype.Reset = function(_scope){
-            _scope.GetModal().hide();
-            _scope.GetModal().find(_scope.overlay).html("");
-            _scope.GetModal().find(_scope.modal).html("");
-
-            _scope.overlay.append(_scope.modal);
-           $('body').append(_scope.backUp);
             window.clearTimeout(_scope.modalTimeout);
+            //clean up after gravity forms:
+			$(document).off("gform_confirmation_loaded");
+			$(document).off("gform_post_render");
+            
+            //removes the gravity modal and adds the original back to the DOM
+            _scope.GetModal().remove();
+            $('body').append(_scope.backUp);
+            
         };
         
         Modal.prototype.HexToRGBA = function(hex, alpha){
@@ -106,8 +106,7 @@
         	//used to return the gravity form back to it's original state:
 	        var content = element.wrap('<div/>').parent().html();
 	        element.unwrap();
-	        return content;
-			
+	        return content;	
         };
 
         return Modal;
