@@ -20,11 +20,12 @@
             
             scope.modal = $('<div/>').attr('class', 'gfc-modal');
             scope.overlay.append(scope.modal);
-            scope.clonedForm = scope.content.clone(true);
+           // scope.clonedForm = scope.content.clone(true);
             //change original form:
-            scope.backUp = scope.content.html();
+            scope.backUp = scope.OuterHtml(scope.content);
+            console.log(scope.backUp);
             //scope.content.remove();
-            scope.overlay.find(scope.modal).append(scope.clonedForm);
+            scope.overlay.find(scope.modal).append(scope.content);
 
             //events
             scope.overlay.on("click", function () {
@@ -63,8 +64,8 @@
 
         Modal.prototype.Show = function () {
             this.GetModal().show();
-            this.clonedForm.toggleClass('show');
-            this.clonedForm.find('.gform_ajax_spinner').hide();
+            this.content.toggleClass('show');
+            this.content.find('.gform_ajax_spinner').hide();
         };
 
         Modal.prototype.Hide = function () {
@@ -72,9 +73,7 @@
             if (!scope.Canvas.is(':visible')) {
                 return;
             }
-            scope.modal.html('');
-            scope.overlay.hide();
-           // scope.GetModal().hide();
+            scope.Reset(scope);
         };
 
         Modal.prototype.GetModal = function () {
@@ -91,7 +90,7 @@
             _scope.GetModal().find(_scope.modal).html("");
 
             _scope.overlay.append(_scope.modal);
-            _scope.overlay.find(_scope.modal).append(_scope.clonedForm);
+           $('body').append(_scope.backUp);
             window.clearTimeout(_scope.modalTimeout);
         };
         
@@ -102,7 +101,16 @@
 			    +',' + alpha + ')';
 			return rgbaCol;
         };
+        
+        Modal.prototype.OuterHtml = function (element){
+        	//used to return the gravity form back to it's original state:
+	        var content = element.wrap('<div/>').parent().html();
+	        element.unwrap();
+	        return content;
+			
+        };
 
         return Modal;
     })();
+    
 })(jQuery);
