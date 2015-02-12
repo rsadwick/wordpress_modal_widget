@@ -95,7 +95,6 @@
     display: none !important;
 }
 
-
 .gfc-contact-request_wrapper{
     display: none !important;
 }
@@ -111,3 +110,12 @@
 .gfc-first-step_wrapper.show{
     display: block !important;
 }
+
+.gfc-baby-dedication_wrapper{
+	display: none !important;
+}
+
+.gfc-baby-dedication_wrapper.show{
+	display: block !important;
+}
+
