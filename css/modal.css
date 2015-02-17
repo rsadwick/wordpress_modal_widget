@@ -39,9 +39,10 @@
 /* Smartphones (landscape) ----------- */
 @media screen and (max-width:480px){
 	.gfc-modal {
-	    left: 50%;
-	    top: 50%;
-	    width: 90%;
+	    left: 0;
+	    top: 0;
+	    width: 100%;
+	    overflow: hidden;
 	  }
 }
 
@@ -95,6 +96,7 @@
     display: none !important;
 }
 
+
 .gfc-contact-request_wrapper{
     display: none !important;
 }
@@ -118,4 +120,3 @@
 .gfc-baby-dedication_wrapper.show{
 	display: block !important;
 }
-
