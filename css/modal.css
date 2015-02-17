@@ -14,9 +14,6 @@
     overflow-y: auto;
 }
 
-
-
-
 .gfc-modal {
 	left: 50%;
     top: 50%;
@@ -47,9 +44,6 @@
 	  }
 }
 
-
-
-
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -79,45 +73,10 @@
     to   { opacity: 1; }
 }
 
-
-.gfc-prayer-request_wrapper{
+.gform_wrapper{
     display: none !important;
 }
 
-.gfc-prayer-request_wrapper.show{
+.gform_wrapper.show{
     display: block !important;
-}
-
-.gfc-volunteer-request_wrapper.show{
-    display: block !important;
-}
-
-.gfc-volunteer-request_wrapper
-{
-    display: none !important;
-}
-
-
-.gfc-contact-request_wrapper{
-    display: none !important;
-}
-
-.gfc-contact-request_wrapper.show{
-    display: block !important;
-}
-
-.gfc-first-step_wrapper{
-    display: none !important;
-}
-
-.gfc-first-step_wrapper.show{
-    display: block !important;
-}
-
-.gfc-baby-dedication_wrapper{
-	display: none !important;
-}
-
-.gfc-baby-dedication_wrapper.show{
-	display: block !important;
 }
