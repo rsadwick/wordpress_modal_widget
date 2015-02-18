@@ -14,3 +14,7 @@ This widget interacts with Gravity forms - forms are rendered in a modal and use
 ```html
 <a class="gfc-form-modal" href="#" data-type="some-class-from-gravity-forms">Open Form Modal</a>
 ```
+
+![Alt text](/screenshots/widget_shot.JPG?raw=true "Widget")
+
+![Alt text](/screenshots/modal_shot.JPG?raw=true "Modal")
